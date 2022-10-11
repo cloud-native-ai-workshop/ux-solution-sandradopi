@@ -41,3 +41,5 @@ vcsInfo:
   branch: ""
 
 runtime: js
+
+connectsTo: bff-solution-sandradopi
