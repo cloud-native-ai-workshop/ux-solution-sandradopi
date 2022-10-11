@@ -31,7 +31,6 @@ class UIShell extends React.Component {
     render() {
         return (
             <BrowserRouter>
-                <Theme theme='g90'>
                     <HeaderContainer
                         render={({ isSideNavExpanded, onClickSideNavExpand }) => (
                             <div>
@@ -42,8 +41,8 @@ class UIShell extends React.Component {
                                         onClick={onClickSideNavExpand}
                                         isActive={isSideNavExpanded}
                                     />
-                                    <HeaderName href="#" prefix="Carbon">
-                                        Template
+                                    <HeaderName href="#" prefix="EY">
+                                        Energy Predictions
                                     </HeaderName>
                                     <HeaderGlobalBar>
                                         <HeaderGlobalAction
@@ -74,7 +73,6 @@ class UIShell extends React.Component {
                             </div>
                         )}
                     />
-                </Theme>
                 <Content className='content'>
                     <Routes>
                         <Route path="/" element={<LandingPage />} />
