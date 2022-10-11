@@ -76,8 +76,8 @@ class UIShell extends React.Component {
                 <Content className='content'>
                     <Routes>
                         <Route path="/" element={<LandingPage />} />
-                        <Route path="/inventory/items" element={<FormPredictions stockService={this.props.stockService} />} />
-                        <Route path="/form" element={<FormPredictions stockService={this.props.stockService} />} />
+                        <Route path="/inventory/items" element={<StockItemList stockService={this.props.stockService} />} />
+                        <Route path="/form" element={<FormPredictions formService={this.props.formService} />} />
                         <Route path="*" element={<NotFound />} />
                     </Routes>
                 </Content>

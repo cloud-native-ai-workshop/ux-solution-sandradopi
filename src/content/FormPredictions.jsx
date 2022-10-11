@@ -6,21 +6,33 @@ import {
 
 export default function FormPredictions() {
   const [state, setState] = React.useState({
-    electricalapliance: "",
+    electricalapliance: "Air conditioner",
     date:"",
     starttime:"",
     endtime:""
   });
 
 function handleChange(event) {
-    console.log(event.target.value)
+    console.log(event.target)
     console.log(event.target.name)
     const value = event.target.value;
+      setState({
+        ...state,
+        [event.target.name]: value,
+      });
+    
+  }
+
+  
+function handleChangeDate(event) {
+  console.log(event)
+  const value = event;
     setState({
       ...state,
-      [event.target.name]: value,
+      ['date']: value,
     });
-  }
+  
+}
 
 function handleRequest(e) {
     console.log("Fruit Selected!!");
@@ -75,9 +87,6 @@ const options = [
      
   ];
 
-
-
-
     return (
         <div className='stock-items-list'>
             <h2  style={{ marginBottom:20 }}>Let´s Go!</h2>
@@ -100,15 +109,16 @@ const options = [
                 <DatePicker    
                 style={{  marginTop:10, marginBottom:10}}
                 datePickerType="single"
+                value={state.date} 
+                onChange={handleChangeDate}
+                name= "date"
                 >
                     <DatePickerInput  
-                        name= "date"
                         value={state.date} 
-                        onChange={handleChange}
+                        name= "date"
+                        onChange={handleChangeDate}
                         id="date-picker-single"
                         labelText=""
-                        onClose={function noRefCheck(){}}
-                        onOpen={function noRefCheck(){}}
                         placeholder="mm/dd/yyyy"
                     />
                 </DatePicker>
