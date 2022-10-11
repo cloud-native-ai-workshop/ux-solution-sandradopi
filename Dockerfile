@@ -25,8 +25,8 @@ RUN npm i -g yarn && \
     yarn cache clean
 
 ENV NODE_ENV=production
-ENV HOST=0.0.0.0 PORT=3001
+ENV HOST=0.0.0.0 PORT=3000
 
-EXPOSE 3001/tcp
+EXPOSE 3000/tcp
 
 CMD ["npm", "start"]

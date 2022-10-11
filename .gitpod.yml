@@ -8,5 +8,5 @@ tasks:
       API_HOST: "https://3000-cloudnative-bffsolution-w646gbddzt4.ws-eu70.gitpod.io"
     command: yarn start:dev
 ports:
-  - port: 3001
+  - port: 3000
     onOpen: open-preview
