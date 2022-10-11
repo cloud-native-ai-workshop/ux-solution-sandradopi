@@ -45,30 +45,11 @@ class UIShell extends React.Component {
                                     <HeaderName href="#" prefix="Carbon">
                                         Template
                                     </HeaderName>
-                                    <HeaderNavigation aria-label="Inventory Management">
-                                        <HeaderMenuItem href="#">Contributing</HeaderMenuItem>
-                                        <HeaderMenuItem href="#">Contact</HeaderMenuItem>
-                                        <HeaderMenu aria-label="How To" menuLinkName="How To">
-                                            <HeaderMenuItem href="#one">Sub-link 1</HeaderMenuItem>
-                                            <HeaderMenuItem href="#two">Sub-link 2</HeaderMenuItem>
-                                            <HeaderMenuItem href="#three">Sub-link 3</HeaderMenuItem>
-                                        </HeaderMenu>
-                                    </HeaderNavigation>
                                     <HeaderGlobalBar>
-                                        <HeaderGlobalAction
-                                            aria-label="Search"
-                                            tooltipAlignment="end">
-                                            <Search size={20} />
-                                        </HeaderGlobalAction>
                                         <HeaderGlobalAction
                                             aria-label="Notifications"
                                             tooltipAlignment="end">
                                             <Notification size={20} />
-                                        </HeaderGlobalAction>
-                                        <HeaderGlobalAction
-                                            aria-label="App Switcher"
-                                            tooltipAlignment="end">
-                                            <Switcher size={20} />
                                         </HeaderGlobalAction>
                                     </HeaderGlobalBar>
                                     <ErrorBoundary>
@@ -77,34 +58,13 @@ class UIShell extends React.Component {
                                                 <SideNavMenuItem element={Link} to='/'
                                                     isActive={this.state.activeItem === '/'}
                                                     onClick={() => { this.setState({ activeItem: '/' }) }}>
-                                                    Overview
+                                                    Home Page
                                                 </SideNavMenuItem>
-                                                <SideNavMenu renderIcon={Fade} title="Inventory" defaultExpanded>
+                                                <SideNavMenu renderIcon={Fade} title="Actions" defaultExpanded>
                                                     <SideNavMenuItem element={Link} to='/inventory/items'
                                                         isActive={this.state.activeItem === '/inventory/items'}
                                                         onClick={() => { this.setState({ activeItem: '/inventory/items' }) }}>
-                                                        Items
-                                                    </SideNavMenuItem>
-                                                </SideNavMenu>
-                                                <SideNavMenu renderIcon={Fade} title="Management">
-                                                    <SideNavMenuItem href="#">
-                                                        Link
-                                                    </SideNavMenuItem>
-                                                    <SideNavMenuItem href="#">
-                                                        Link
-                                                    </SideNavMenuItem>
-                                                    <SideNavMenuItem href="#">
-                                                        Link
-                                                    </SideNavMenuItem>
-                                                </SideNavMenu>
-                                                <SideNavMenu
-                                                    renderIcon={Fade}
-                                                    title="Docs">
-                                                    <SideNavMenuItem href="#">
-                                                        Link
-                                                    </SideNavMenuItem>
-                                                    <SideNavMenuItem href="#">
-                                                        Link
+                                                        Energy Predictions
                                                     </SideNavMenuItem>
                                                 </SideNavMenu>
                                             </SideNavItems>
