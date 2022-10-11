@@ -5,8 +5,8 @@
 tasks:
   - init: yarn install
     env:
-      API_HOST: "http://example.com"
+      API_HOST: "https://3000-cloudnative-bffsolution-w646gbddzt4.ws-eu70.gitpod.io"
     command: yarn start:dev
 ports:
-  - port: 3000
+  - port: 3001
     onOpen: open-preview

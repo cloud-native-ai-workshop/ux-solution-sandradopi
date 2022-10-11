@@ -17,7 +17,7 @@ import ErrorBoundary from "../../components/ErrorBoundary";
 import LandingPage from '../LandingPage';
 import NotFound from '../../components/NotFound';
 import StockItemList from "../StockItemList";
-
+import FormPredictions from "../FormPredictions";
 
 class UIShell extends React.Component {
 
@@ -60,9 +60,9 @@ class UIShell extends React.Component {
                                                     Home Page
                                                 </SideNavMenuItem>
                                                 <SideNavMenu renderIcon={Fade} title="Actions" defaultExpanded>
-                                                    <SideNavMenuItem element={Link} to='/inventory/items'
-                                                        isActive={this.state.activeItem === '/inventory/items'}
-                                                        onClick={() => { this.setState({ activeItem: '/inventory/items' }) }}>
+                                                    <SideNavMenuItem element={Link} to='/form'
+                                                        isActive={this.state.activeItem === '/form'}
+                                                        onClick={() => { this.setState({ activeItem: '/form' }) }}>
                                                         Energy Predictions
                                                     </SideNavMenuItem>
                                                 </SideNavMenu>
@@ -76,7 +76,8 @@ class UIShell extends React.Component {
                 <Content className='content'>
                     <Routes>
                         <Route path="/" element={<LandingPage />} />
-                        <Route path="/inventory/items" element={<StockItemList stockService={this.props.stockService} />} />
+                        <Route path="/inventory/items" element={<FormPredictions stockService={this.props.stockService} />} />
+                        <Route path="/form" element={<FormPredictions stockService={this.props.stockService} />} />
                         <Route path="*" element={<NotFound />} />
                     </Routes>
                 </Content>
