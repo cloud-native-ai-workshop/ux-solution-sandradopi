@@ -57,14 +57,14 @@ function HandleRequest(e) {
           
         setState({
           ...state,
-          ['prediction']:'Of all the time ranges, the one that has obtained the best results is 11:00-12:00 with a score of ' + res.data.predictions[0].values[0][0].toFixed(2)
+          ['prediction']:'Of all the time ranges, the one that has obtained the best results is ' +state.starttime+' - ' +state.endtime+' with a score of ' + res.data.predictions[0].values[0][0].toFixed(2)
         });        
       }
 )
         .catch(err =>{
           setState({
             ...state,
-            ['prediction']:'Of all the time ranges, the one that has obtained the best results is 11:00-12:00 with a score of ' + (1 + (Math.random() * (100-1))).toFixed(2)
+            ['prediction']:'Of all the time ranges, the one that has obtained the best results is ' +state.starttime+' - ' +state.endtime+' with a score of ' + (1 + (Math.random() * (100-1))).toFixed(2)
           });   
         });
     
