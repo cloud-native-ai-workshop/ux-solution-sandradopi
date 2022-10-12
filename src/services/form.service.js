@@ -1,26 +1,19 @@
 import axios from "axios";
 
 export class FormService {
+
     constructor(baseUrl) {
         this.baseUrl = baseUrl || '/api';
+        console.log(this.baseUrl)
     }
 
-    async sendFormData() {
+    async sendFormData(xtate) {
+
         return axios({
             url: '/api/graphql',
             method: "POST",
-            data: {
-                query: `
-                {
-                    formData {
-                        appliance
-                        date
-                        timestart
-                        timeend
-                    }
-                }
-                `
-            }
+            body: JSON.stringify(state),
         }).then(response => response.data.data.formData);
     }
+    
 }

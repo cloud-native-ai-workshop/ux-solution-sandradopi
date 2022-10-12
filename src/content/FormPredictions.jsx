@@ -4,7 +4,7 @@ import {
     Select, Row, TimePicker, DatePicker,DatePickerInput, Button
 } from '@carbon/react';
 
-export default function FormPredictions() {
+export default function FormPredictions(props) {
   const [state, setState] = React.useState({
     electricalapliance: "Air conditioner",
     date:"",
@@ -34,9 +34,12 @@ function handleChangeDate(event) {
   
 }
 
-function handleRequest(e) {
+function HandleRequest(e) {
     console.log("Fruit Selected!!");
     console.log(state);
+    const { isLoading, error, data } = useQuery(['from_prediction'], props.fromService.sendFormData);
+      
+
   }
 
 const options = [
@@ -146,7 +149,7 @@ const options = [
                     ></TimePicker>
             </Row>
             <Row> 
-                <Button onClick={handleRequest}>Calculate</Button>
+                <Button onClick={HandleRequest}>Calculate</Button>
             </Row>
 
 

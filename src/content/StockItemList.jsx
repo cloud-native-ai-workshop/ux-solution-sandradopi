@@ -6,6 +6,7 @@ import {
 } from '@carbon/react';
 
 export default function StockItemList(props) {
+    console.log(props)
     const { isLoading, error, data } = useQuery(['stock-items'], props.stockService.listStockItems);
 
     return (
