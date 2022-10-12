@@ -49,7 +49,7 @@ function HandleRequest(e) {
     console.log("Fruit Selected!!");
     console.log(state);
     let random_prediction= 1 + (Math.random() * (100-1))
-    let result= random_prediction.toFixed(2)
+    let result= 'Of all the time ranges, the one that has obtained the best results is 11:00-12:00 with a score of ' + random_prediction.toFixed(2)
     setState({
       ...state,
       ['prediction']: result,
@@ -178,7 +178,7 @@ const options = [
                 <Button onClick={HandleRequest}>Calculate</Button>
             </Row>
             <Row> 
-              <h4  style={{ marginTop:20 }}>Of all the time ranges, the one that has obtained the best results is 11:00-12:00 with a score of {state.prediction}</h4>
+              <h4 style={{ marginTop:20 }}>{state.prediction}</h4>
             </Row>
 
 
