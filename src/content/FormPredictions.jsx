@@ -3,14 +3,25 @@ import { useQuery } from '@tanstack/react-query';
 import {
     Select, Row, TimePicker, DatePicker,DatePickerInput, Button
 } from '@carbon/react';
-
+import {
+  DataTable,
+  Table,
+  TableHead,
+  TableRow,
+  TableHeader,
+  TableBody,
+  TableCell,
+} from '@carbon/react';
+import axios from "axios";
 export default function FormPredictions(props) {
   const [state, setState] = React.useState({
     electricalapliance: "Air conditioner",
     date:"",
     starttime:"",
-    endtime:""
+    endtime:"",
+    prediction:""
   });
+
 
 function handleChange(event) {
     console.log(event.target)
@@ -37,8 +48,22 @@ function handleChangeDate(event) {
 function HandleRequest(e) {
     console.log("Fruit Selected!!");
     console.log(state);
-    const { isLoading, error, data } = useQuery(['from_prediction'], props.fromService.sendFormData);
-      
+    let random_prediction= 1 + (Math.random() * (100-1))
+    let result= random_prediction.toFixed(2)
+    setState({
+      ...state,
+      ['prediction']: result,
+    });
+
+
+  
+
+
+      /*axios
+        .post("/api/from_prediction", state)
+        .then(res => console.log(res))
+        .catch(err => console.log(err));*/
+    
 
   }
 
@@ -97,6 +122,7 @@ const options = [
                 <label  style={{ fontSize: 14}}>Electrical apliance</label>
                 <div className="select-container">
                     <Select  
+                        id="select-electricalapliance"
                         name= "electricalapliance"
                         value={state.electricalapliance}
                         onChange={handleChange} 
@@ -150,6 +176,9 @@ const options = [
             </Row>
             <Row> 
                 <Button onClick={HandleRequest}>Calculate</Button>
+            </Row>
+            <Row> 
+              <h4  style={{ marginTop:20 }}>Of all the time ranges, the one that has obtained the best results is 11:00-12:00 with a score of {state.prediction}</h4>
             </Row>
 
 
