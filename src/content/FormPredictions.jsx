@@ -48,20 +48,19 @@ function handleChangeDate(event) {
 function HandleRequest(e) {
     console.log("Fruit Selected!!");
     console.log(state);
-    let random_prediction= 70 + (Math.random() * (100-70))
-    let result= 'Of all the time ranges, the one that has obtained the best results is 11:00-12:00 with a score of ' + random_prediction.toFixed(2)
-    setState({
-      ...state,
-      ['prediction']: result,
-    });
-
-
-  
 
 
       axios
         .post("/api/from_prediction", state)
-        .then(res => console.log(res))
+        .then(res => { 
+          console.log(res.data.predictions[0].values[0][0]) 
+          
+        setState({
+          ...state,
+          ['prediction']:'Of all the time ranges, the one that has obtained the best results is 11:00-12:00 with a score of ' + res.data.predictions[0].values[0][0].toFixed(2)
+        });        
+      }
+)
         .catch(err => console.log(err));
     
 
