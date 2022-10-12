@@ -7,7 +7,7 @@ export class FormService {
         console.log(this.baseUrl)
     }
 
-    async sendFormData(xtate) {
+    async sendFormData(state) {
 
         return axios({
             url: '/api/graphql',
